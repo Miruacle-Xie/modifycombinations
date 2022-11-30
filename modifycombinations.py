@@ -16,7 +16,6 @@ def combi(seq):
                 yield [element] + rest
 
 
-
 def main():
     filename = input("\n文件路径：\n")
     filename = filename.replace("\"", "").replace("\'", "")
@@ -29,7 +28,7 @@ def main():
         # print(df.iloc[i].isna().sum())
         # print(df.shape[1]-df.iloc[i].isna().sum())
         for j in range(1, df.shape[1]-df.iloc[i].isna().sum()):
-            tmplist.append(df.iloc[i, j].split(","))
+            tmplist.append(str(df.iloc[i, j]).split(","))
         productlist = list(itertools.product(*tmplist))
         productlist = [" ".join(i) for i in productlist]
         # print(productlist)
